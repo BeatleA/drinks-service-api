@@ -22,7 +22,7 @@ describe('Test coffee API endpoint request', () => {
         });
     });
 
-    test('GET /coffee should return correct object', async () => {
+    test('GET /coffee with different param should return correct object', async () => {
         const res = await request(app)
             .get('/coffee')
             .query({ coffeeName: 'Espresso' });
@@ -34,7 +34,7 @@ describe('Test coffee API endpoint request', () => {
         });
     });
 
-    test('GET /coffee should return correct object', async () => {
+    test('GET /coffee with no param should return correct object', async () => {
         const res = await request(app).get('/coffee');
 
         expect(res.statusCode).toEqual(200);
